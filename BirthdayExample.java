@@ -1,10 +1,9 @@
+package src;
 
-
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
+import org.json.simple.*;
+import org.json.simple.parser.*;
 
 public class BirthdayExample {
 
