@@ -2,10 +2,14 @@
 
 import java.io.*;
 import java.util.*;
+import java.util.jar.Attributes.Name;
+
 import org.json.simple.*;
 import org.json.simple.parser.*;
 
 public class BirthdayExample {
+
+    private static Object input;
 
     //
     // Func: ReadJSONFile
@@ -52,15 +56,15 @@ public class BirthdayExample {
         System.out.println("Reading user input into a string");
 
         // get user input
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter a name:");
-        String name = input.nextLine();
+        //Scanner input = new Scanner(System.in);
+        //System.out.print("Enter a name:");
+        //String name = input.nextLine();
         
         // print user input
-        System.out.println("name = " + name);
+       // System.out.println("name = " + name);
 
         // close the scanner
-        input.close();
+        //input.close();
 
 
         //
@@ -78,21 +82,46 @@ public class BirthdayExample {
 
 
         JSONArray jsonData = ReadJSONArrayFile(pathToFile);
+        // create a hashmap
+        HashMap<String, String> birthdayMap = new HashMap<String, String>();
 
         // loop over list
         String birthday;
         JSONObject obj;
+        
         for (Integer i = 0; i < jsonData.size() ; i++) {
 
             // parse the object and pull out the name and birthday
             obj = (JSONObject) jsonData.get(i);
             birthday = (String) obj.get("birthday");
-            name = (String) obj.get("name");
+            String name = (String) obj.get("name");
+            birthdayMap.put(name, birthday);
+            //System.out.println("name = " + name);
+            //System.out.println("birthday = " + birthday);
+            
+            System.out.println("reading user input into a string");
 
-            System.out.println("name = " + name);
-            System.out.println("birthday = " + birthday);
 
-        }
+        // get user input
+        System.out.print("Enter a name:");
+        
+        
+        
+
+        // print user input
+        System.out.println("name = " + name);
+
+    // birthday lookup
+    System.out.println("the birthday is" + birthdayMap.get(name));
+
+    // another birthday lookup
+    System.out.println("do you want to look for another birthday? Y or N");
+    
+        
+    
+    
+    
+    }
 
 
 
