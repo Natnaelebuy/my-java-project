@@ -10,6 +10,7 @@ import org.json.simple.parser.*;
 public class BirthdayExample {
 
     private static Object input;
+    private static Object answer;
 
     //
     // Func: ReadJSONFile
@@ -99,24 +100,34 @@ public class BirthdayExample {
             //System.out.println("name = " + name);
             //System.out.println("birthday = " + birthday);
             
-            System.out.println("reading user input into a string");
+            
+    // do a look up of the enteretd earlier 
+    String found = birthdayMap.get(name);
+    System.out.println("The birthday is" + found);
 
+    // how to read user input from keyboard
+    System.out.println("Reading user input into a string");
 
-        // get user input
-        System.out.print("Enter a name:");
-        
-        
-        
+    // get user input
+    System.out.println("Enter a name:");
+    answer = input();
+    //name = input.nextline();
 
-        // print user input
-        System.out.println("name = " + name);
+    // print user input
+    System.out.println("name = " + name);
 
-    // birthday lookup
-    System.out.println("the birthday is" + birthdayMap.get(name));
+    // close the scanner 
+    // input.close();
 
-    // another birthday lookup
-    System.out.println("do you want to look for another birthday? Y or N");
+    // birthday look up
+    System.out.println("Birthday = " + birthdayMap.get(name));
+
+    // another birthday look up
+    System.out.println("Do you want to look for another birthday? Y or N" );
+    answer = input();
     
+
+        
         
     
     
@@ -127,6 +138,10 @@ public class BirthdayExample {
 
 
 
+    }
+
+    private static Object input() {
+        return null;
     }
 
 }
