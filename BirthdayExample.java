@@ -1,4 +1,4 @@
-package src;
+
 
 import java.io.*;
 import java.util.*;
@@ -71,7 +71,7 @@ public class BirthdayExample {
         // a full path to the file. Example is below.
         
         // relative path
-        String pathToFile = "./src/birthday.json";
+        String pathToFile = "./birthday.json";
 
         // full path
         // String pathToFile = "E:/Users/jerome/GitHub/evc-cit044-java-references-and-data-structures/src/birthday.json";
